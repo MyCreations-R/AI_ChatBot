@@ -1,16 +1,116 @@
-# React + Vite
+# 🤖 Nova AI — Full-Stack AI Chatbot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack AI chatbot built from scratch using React.js, JavaScript, CSS, Node.js, Express, SQLite, and the Google Gemini API.
 
-Currently, two official plugins are available:
+The application provides a ChatGPT-style conversational interface with persistent chat history, multiple conversations, response regeneration, Markdown support, code formatting, and other productivity features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💬 AI Chat
+- Real-time AI conversations using Google Gemini
+- Natural conversational context
+- Loading / typing indicator
+- Error handling for failed requests
+- Character limit protection
 
-## Expanding the ESLint configuration
+### 🗂️ Chat Management
+- Create new conversations
+- Persistent chat history
+- Select previous conversations
+- Rename conversations
+- Delete conversations
+- Search chat history
+- Clear conversation messages
+- Automatically generated chat titles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔄 AI Response Controls
+- Regenerate AI responses
+- Preserve conversation history
+- Copy complete AI responses
+- Copy individual code blocks
+
+### 📝 Rich Message Rendering
+- Markdown support
+- Inline code formatting
+- Code blocks
+- Code language labels
+- Message timestamps
+
+### 💾 Persistent Storage
+- SQLite database
+- Conversations remain available after refreshing the browser
+- Messages are stored on the backend
+
+### 🔐 Security
+- Gemini API key stored in environment variables
+- API key is never exposed in the React frontend
+- `.env` is excluded from Git
+- Local SQLite database is excluded from Git
+
+### 📱 User Experience
+- Responsive interface
+- Clean chat layout
+- Empty-state suggestions
+- Keyboard support
+- Enter to send
+- Shift + Enter for a new line
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- JavaScript
+- CSS
+- Vite
+- React Markdown
+
+### Backend
+
+- Node.js
+- Express.js
+- REST API
+- CORS
+- dotenv
+
+### Database
+
+- SQLite
+- better-sqlite3
+
+### AI
+
+- Google Gemini API
+- Google GenAI SDK
+
+### Development Tools
+
+- Git
+- GitHub
+- VS Code
+
+---
+
+## 🏗️ Project Architecture
+
+```text
+User
+  │
+  ▼
+React Frontend
+  │
+  │ HTTP Requests
+  ▼
+Express Backend
+  │
+  ├──────────────► Google Gemini API
+  │
+  ▼
+SQLite Database
+  │
+  ├── Chats
+  └── Messages
